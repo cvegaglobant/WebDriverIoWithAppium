@@ -19,10 +19,17 @@ describe('Test preparados para el examen', () => {
     it('Privacy and Legal', async () => {
         await HomeScreen.abrirMenu();
         await MenuScreen.tocarBanner();
-        await MenuScreen.Scroll();
-        await MenuScreen.Scroll();
-        expect(await MenuScreen.privacyAndLegalOption).toBeDisplayed();
+        expect(await MenuScreen.profileOption).toBeDisplayed();
+        expect(await MenuScreen.propertyRulesOption).toBeDisplayed();
+        expect(await MenuScreen.linkToAccOption).toBeDisplayed();
+        expect(await MenuScreen.helpOption).toBeDisplayed();
+        expect(await MenuScreen.privacyScroll).toBeDisplayed();
         await MenuScreen.abrirPrivacyOption();
+        expect(await PrivacyScreen.privacyPolicy).toBeDisplayed();
+        expect(await PrivacyScreen.termsOfUSe).toBeDisplayed();
+        expect(await PrivacyScreen.supplementalTerms).toBeDisplayed();
+        expect(await PrivacyScreen.legalNotices).toBeDisplayed();
+        expect(await PrivacyScreen.propertyRules).toBeDisplayed();
         expect(await PrivacyScreen.electronicCommunicationText).toBeDisplayed();
     })
 });
