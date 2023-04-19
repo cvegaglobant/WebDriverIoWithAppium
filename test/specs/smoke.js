@@ -3,6 +3,7 @@ import WelcomeScreen from "../src/screens/WelcomeScreen.js";
 import MapScreen from "../src/screens/MapScreen.js";
 import MenuScreen from "../src/screens/MenuScreen.js";
 import PrivacyScreen from "../src/screens/PrivacyScreen.js";
+import FloatingScreen from "../src/screens/FloatingScreen.js";
 
 describe('Test preparados para el examen', () => {
     it('Category list Text', async () => {
@@ -31,5 +32,10 @@ describe('Test preparados para el examen', () => {
         expect(await PrivacyScreen.legalNotices).toBeDisplayed();
         expect(await PrivacyScreen.propertyRules).toBeDisplayed();
         expect(await PrivacyScreen.electronicCommunicationText).toBeDisplayed();
+    })
+
+    it('Add plans option', async () => {
+        await PrivacyScreen.abrirPlanButton();
+        expect(await FloatingScreen.checkDinning).toBeEnabled();
     })
 });
