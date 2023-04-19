@@ -37,5 +37,6 @@ describe('Test preparados para el examen', () => {
     it('Add plans option', async () => {
         await PrivacyScreen.abrirPlanButton();
         expect(await FloatingScreen.checkDinning).toBeEnabled();
+        expect(await FloatingScreen.checkDinning).toBeClickable();
     })
 });
